@@ -67,13 +67,13 @@ ibeacon.initialize({
        vous pouvez faire différentes choses en fonction de la proximité */
     actions: function(beacon, identifier) {
     	if (beacon.proximity === 'ProximityImmediate') {
-    	  alert('Je suis très près de : ' + identifier');
+    	  alert('Je suis très près de : ' + identifier);
     	}
     	else if (beacon.proximity === 'ProximityNear') {
-    	  alert('Je suis près de : ' + identifier');
+    	  alert('Je suis près de : ' + identifier);
     	}
     	else if (beacon.proximity === 'ProximityFar') {
-    	  alert('Je suis loin de : ' + identifier');
+    	  alert('Je suis loin de : ' + identifier);
     	}
     }
 });

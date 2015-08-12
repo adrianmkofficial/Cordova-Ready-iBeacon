@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="user-scalable=no, width=device-width" />
+		<meta charset="UTF-8" />
+        <title>Cordova Ready iBeacon</title>
+    </head>
+    <body>
+        <h1>Look at my awesome iBeacon app !</h1>
+		
+		<!-- In your HTML file, first add this scripts before the </body> tag -->
+        <script src="cordova.js"></script>
+		<script src="cordova_plugins.js"></script>
+        <script src="cordova-ready-ibeacon.js"></script>
+	
+		<script>
+			/* 
+			 * In your JavaScript, all your code must be inside device ready event
+			 */
+			document.addEventListener('deviceready', function() {
+				
+				/*
+				 * Then, you have to call the initialize() method. 
+				 * You must add the identifiers of all the beacons you have to scan.
+				 */
+				ibeacon.initialize({
+					/* The identifiers of all the beacons to scan */
+					regions: [
+						{
+							id:'iBeacon1',
+							uuid:'0DE0F8EE-D6DC-4E65-A770-D3E65231C434',
+							major: 1,
+							minor: 1
+						},
+						{
+							id:'iBeacon2',
+							uuid:'0DE0F8EE-D6DC-4E65-A770-D3E65231C434',
+							major: 1,
+							minor: 2
+						},
+						{
+							id:'iBeacon3',
+							uuid:'0DE0F8EE-D6DC-4E65-A770-D3E65231C434',
+							major: 1,
+							minor: 3
+						}
+					],
+					/* The actions to do when a beacon is detected,
+					   you can do different things depending on the proximity */
+					actions: function(beacon, identifier) {
+						if (beacon.proximity === 'ProximityImmediate') {
+						  alert('I am very next to : ' + identifier);
+						}
+						else if (beacon.proximity === 'ProximityNear') {
+						  alert('I am next to : ' + identifier);
+						}
+						else if (beacon.proximity === 'ProximityFar') {
+						  alert('I am far from : ' + identifier);
+						}
+					}
+				});
+			});
+			
+			/* 
+			 * Your can start scanning for beacons using the ibeaconInitialized event and the startScan() method. 
+			 * This event is fired at he first launch and each time your application is retreived from the background.
+			 */
+			document.addEventListener('ibeaconInitialized', function() {
+				ibeacon.startScan();
+			}, false);
+		</script>
+    </body>
+</html>

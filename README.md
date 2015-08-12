@@ -36,14 +36,14 @@ In your HTML file, first add this scripts before the ```</body>``` tag :<br />
 ```
 
 ## Initialization
-In your JavaScript file, all you code must be inside :
+In your JavaScript file, all your code must be inside :
 ```javascript
 document.addEventListener('deviceready', function() {
     /* Your code here, if not, it does not work, at all */
 });
 ```
 
-Then, you have to call the ```initialize()``` method. You must add the identifiers all the beacons you have to scan.
+Then, you have to call the ```initialize()``` method. You must add the identifiers of all the beacons you have to scan.
 ```javascript
 ibeacon.initialize({
     /* The identifiers of all the beacons to scan */

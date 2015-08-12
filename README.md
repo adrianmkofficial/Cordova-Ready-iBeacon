@@ -11,7 +11,7 @@ It provides by its own the device verification (to make sure the user device is 
 
 ## Supported devices
 Only devices that are compatible with Bluetooth Low Energy (LE) can connect to iBeacons.<br />
-The devices list is available here : http://www.bluetooth.com/Pages/Bluetooth-Smart-Devices-List.aspx
+[The devices list is available here](http://www.bluetooth.com/Pages/Bluetooth-Smart-Devices-List.aspx)
 
 ## Installation
 

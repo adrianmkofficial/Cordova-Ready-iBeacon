@@ -1,3 +1,5 @@
+[Lire la documentation en français](https://github.com/RomainFallet/Cordova-Ready-iBeacon/blob/master/LISEZ-MOI.md)
+
 # Cordova-Ready-iBeacon
 Cordova Ready iBeacon is a script that give a complete solution "ready to use", based on several Cordova plugins, to connect to iBeacons in a Cordova application.
 
@@ -41,7 +43,7 @@ document.addEventListener('deviceready', function() {
 });
 ```
 
-Then, you have to call the initialize method. You must add the identifiers all the beacons you have to scan.
+Then, you have to call the ```initialize()``` method. You must add the identifiers all the beacons you have to scan.
 ```javascript
 ibeacon.initialize({
     /* The identifiers of all the beacons to scan */
@@ -76,7 +78,7 @@ ibeacon.initialize({
 ```
 
 ## Start scanning
-Your can start scanning for beacons using the ibeaconInitialized event and the startScan() method.
+Your can start scanning for beacons using the ibeaconInitialized event and the ```startScan()``` method.
 This event is fired at he first launch and each time your application is retreived from the background.
 ```javascript
 document.addEventListener('ibeaconInitialized', function() {
@@ -85,7 +87,7 @@ document.addEventListener('ibeaconInitialized', function() {
 ```
 
 ## Stop scanning
-You can stop scanning whenever you want using the stopScan() method :
+You can stop scanning whenever you want using the stopScan() method. This method is called automatically when the app is sent in background.
 ```javascript
 ibeacon.stopScan();
 ````

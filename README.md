@@ -143,36 +143,36 @@ en: {
         
 	deviceCheckingMessage: 'Device checking.',
         
-        deviceNotSupportedErrorTitle: 'Your device is not supported',
-        deviceNotSupportedErrorMessage: 'Your device does not support Bluetooth 4.0, functionalities related to ibeacons are disabled.',
-        deviceNotSupportedErrorButton: 'Continue',
-        
-        bluetoothNotEnabledAndroidErrorTitle: 'Enable Bluetooth ?',
-        bluetoothNotEnabledAndroidErrorMessage: 'You must enable Bluetooth to connect to ibeacons.',
-        bluetoothNotEnabledAndroidErrorButtons: 'Cancel,Enable',
-        
-        bluetoothNotEnabledIosErrorTitle: 'Enable Bluetooth ?',
-        bluetoothNotEnabledIosErrorMessage: 'You must enable Bluetooth to connect to ibeacons.\n\n(Settings -> Bluetooth)',
-        bluetoothNotEnabledIosErrorButtons: 'Cancel,Enable',
-        
-        waitingScreenBluetoothMessage: 'Please, enable Bluetooth',
-        
-        locationNotEnabledIosErrorTitle: 'Enable Location Services ?',
-        locationNotEnabledIosErrorMessage: 'You must enable Location Services to connect to ibeacons.\n\n(Settings -> Privacy ->\nLocation Services)',
-        locationNotEnabledIosErrorButtons: 'Cancel,Ok',
-        
-        waitingScreenLocationMessage: 'Please, enable Location Services',
-        
-        locationNotAuthorizedErrorTitle: 'You must authorize the application',
-        locationNotAuthorizedErrorMessage: 'You must authorize this application to use Location Services to connect to ibeacons.',
-        locationNotAuthorizedErrorButtons: 'Cancel,Authorize',
-        
-        servicesActivationCancelledAndroidTitle: 'Disable ibeacons features ?',
-        servicesActivationCancelledAndroidMessage: 'If you do not enable Bluetooth, ibeacons features will be disabled.\n\nAre you sure ?',
-        servicesActivationCancelledAndroidButtons: 'Enable,Disable',
-        
-        servicesActivationCancelledIosTitle: 'Disable ibeacons features ?',
-        servicesActivationCancelledIosMessage: 'If you do not enable Bluetooth and Location Services, ibeacons features will be disabled.\n\nAre you sure ?',
-        servicesActivationCancelledIosButtons: 'Enable,Disable'
+	deviceNotSupportedErrorTitle: 'Your device is not supported',
+	deviceNotSupportedErrorMessage: 'Your device does not support Bluetooth 4.0, functionalities related to ibeacons are disabled.',
+	deviceNotSupportedErrorButton: 'Continue',
+	
+	bluetoothNotEnabledAndroidErrorTitle: 'Enable Bluetooth ?',
+	bluetoothNotEnabledAndroidErrorMessage: 'You must enable Bluetooth to connect to ibeacons.',
+	bluetoothNotEnabledAndroidErrorButtons: 'Cancel,Enable',
+	
+	bluetoothNotEnabledIosErrorTitle: 'Enable Bluetooth ?',
+	bluetoothNotEnabledIosErrorMessage: 'You must enable Bluetooth to connect to ibeacons.\n\n(Settings -> Bluetooth)',
+	bluetoothNotEnabledIosErrorButtons: 'Cancel,Enable',
+	
+	waitingScreenBluetoothMessage: 'Please, enable Bluetooth',
+	
+	locationNotEnabledIosErrorTitle: 'Enable Location Services ?',
+	locationNotEnabledIosErrorMessage: 'You must enable Location Services to connect to ibeacons.\n\n(Settings -> Privacy ->\nLocation Services)',
+	locationNotEnabledIosErrorButtons: 'Cancel,Ok',
+	
+	waitingScreenLocationMessage: 'Please, enable Location Services',
+	
+	locationNotAuthorizedErrorTitle: 'You must authorize the application',
+	locationNotAuthorizedErrorMessage: 'You must authorize this application to use Location Services to connect to ibeacons.',
+	locationNotAuthorizedErrorButtons: 'Cancel,Authorize',
+	
+	servicesActivationCancelledAndroidTitle: 'Disable ibeacons features ?',
+	servicesActivationCancelledAndroidMessage: 'If you do not enable Bluetooth, ibeacons features will be disabled.\n\nAre you sure ?',
+	servicesActivationCancelledAndroidButtons: 'Enable,Disable',
+	
+	servicesActivationCancelledIosTitle: 'Disable ibeacons features ?',
+	servicesActivationCancelledIosMessage: 'If you do not enable Bluetooth and Location Services, ibeacons features will be disabled.\n\nAre you sure ?',
+	servicesActivationCancelledIosButtons: 'Enable,Disable'
 }
 ```

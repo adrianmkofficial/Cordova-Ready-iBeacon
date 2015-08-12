@@ -79,7 +79,7 @@ ibeacon.initialize({
 
 ## Start scanning
 Your can start scanning for beacons using the ibeaconInitialized event and the ```startScan()``` method.
-This event is fired at he first launch and each time your application is retreived from the background.
+This event is fired at the first launch and each time your application is retreived from the background.
 ```javascript
 document.addEventListener('ibeaconInitialized', function() {
 	ibeacon.startScan();

@@ -1,20 +1,23 @@
+[Read the documentation in english](https://github.com/RomainFallet/Cordova-Ready-iBeacon)
+
 # Cordova-Ready-iBeacon
-Cordova Ready iBeacon is a script that give a complete solution "ready to use", based on several Cordova plugins, to connect to iBeacons in a Cordova application.
+Cordova Ready iBeacon est un script JS qui fournit un solution complète « prête à être utilisée », basée sur différents plugins Cordova, pour dialoguer avec des balises iBeacons dans une application Cordova.
 
-It provides by its own the device verification (to make sure the user device is compatible with iBeacons), Bluetooth and Location services verification. The script informs the user about compatibility (when it's not compatible) and request services activation if required ones are disabled.
+Cela passe par la vérification de l’appareil en cours d'utilisation (pour vérifier qu’il est bien compatible avec les balises iBeacons) ainsi que la vérification de l'activation du Bluetooth et du Service de localisation (ce dernier étant pour iOS uniquement).
+Le script informe l'utilisateur si son appareil n’est pas compatible et demande l’activation des services requis s'il sont désactivés.
 
-## Supported platforms
-- Android 4.4.2 (KitKat) and higher
-- iOS 8 and higher
+## Plateformes supportées
+- Android 4.4.2 (KitKat) et plus
+- iOS 8 et plus
 
-## Supported devices
-Only devices that are compatible with Bluetooth Low Energy (LE) can connect to iBeacons.<br />
-The devices list is available here : http://www.bluetooth.com/Pages/Bluetooth-Smart-Devices-List.aspx
+## Appareils supportés
+Seuls les appareils compatibles avec le Bluetooth Low Energy (LE) peuvent se connecter aux balises iBeacons.<br />
+[Voir la liste des appareils compatibles](http://www.bluetooth.com/Pages/Bluetooth-Smart-Devices-List.aspx)
 
 ## Installation
 
 ##### Plugins
-Cordova ReadyToUse iBeacon is based on several plugins that you have to install to make it works :
+Cordova Ready iBeacon est basé sur plusieurs plugins qui sont nécessaires pour son bon fonctionnement. Vous pouvez les installer avec ces commandes :
 
     cordova plugin add https://github.com/randdusing/BluetoothLE
     cordova plugin add https://github.com/petermetz/cordova-plugin-ibeacon
@@ -25,7 +28,8 @@ Cordova ReadyToUse iBeacon is based on several plugins that you have to install 
     cordova plugin add cordova-plugin-device
     
 ##### HTML
-In your HTML file, first add this scripts before the ```</body>``` tag :<br />
+
+Dans votre fichier HTML, ajoutez ces scripts avant la fin de la balise ```</body>```:
 
 ```html
 <script src="cordova.js"></script>
@@ -33,18 +37,18 @@ In your HTML file, first add this scripts before the ```</body>``` tag :<br />
 <script src="cordova-ready-ibeacon.js"></script>
 ```
 
-## Initialization
-In your JavaScript file, all you code must be inside :
+## Initialisation
+Dans votre fichier JavaScript, tout votre code doit être encapsulé dans ceci :
 ```javascript
 document.addEventListener('deviceready', function() {
-    /* Your code here, if not, it does not work, at all */
+    /* Votre code ici, sinon cela ne marchera pas, du tout */
 });
 ```
 
-Then, you have to call the initialize method. You must add the identifiers all the beacons you have to scan.
+Ensuite, vous devez appeler la méthode ```initialize()```. Il faut ajouter les identifiants de toutes les balises que vous souhaitez scanner.
 ```javascript
 ibeacon.initialize({
-    /* The identifiers of all the beacons to scan */
+    /* Les identifiants des balises à scanner */
     regions: [
     	{
           id: 'myFirstBeacon',
@@ -59,120 +63,120 @@ ibeacon.initialize({
     		minor: 2
     	}
     ],
-    /* The actions to do when a beacon is detected,
-       you can do different things depending on the proximity */
+    /* Les actions à effectuer lorsqu'une balise est détectée,
+       vous pouvez faire différentes choses en fonction de la proximité */
     actions: function(beacon, identifier) {
     	if (beacon.proximity === 'ProximityImmediate') {
-    	  alert('I am very next to : ' + identifier');
+    	  alert('Je suis très près de : ' + identifier');
     	}
     	else if (beacon.proximity === 'ProximityNear') {
-    	  alert('I am next to : ' + identifier');
+    	  alert('Je suis près de : ' + identifier');
     	}
     	else if (beacon.proximity === 'ProximityFar') {
-    	  alert('I am far from : ' + identifier');
+    	  alert('Je suis loin de : ' + identifier');
     	}
     }
 });
 ```
 
-## Start scanning
-Your can start scanning for beacons using the ibeaconInitialized event and the startScan() method.
-This event is fired at he first launch and each time your application is retreived from the background.
+## Début du scan
+Vous pouvez scanner les balises iBeacons en utilisant l’événement ``ìbeaconInitialized``` et la méthode ```startScan()``.
+Cette événement est déclenché au lancement de l’application puis à chaque fois que celle-ci revient au premier plan.
 ```javascript
 document.addEventListener('ibeaconInitialized', function() {
 	ibeacon.startScan();
 }, false);
 ```
 
-## Stop scanning
-You can stop scanning whenever you want using the stopScan() method :
+## Arrêt du scan
+Vous pouvez stopper le scan à tout moment en utilsant la méthode ```stopScan()```. Le script arrête automatiquement le scan lorsque l'application bascule en arrière-plan.
 ```javascript
 ibeacon.stopScan();
 ````
 
-## Other events
-Some events are trigerred to let you manage all the situations :
+## Autres événements
+Certains événements sont écoutés pour vous permettre de réagir face à toutes les situations.
 
 ##### ibeaconNotSupported
-This event is fired when the user device does not support Bluetooth LE, which is required to connect to iBeacons.
+Cet événement est déclenché lorsque l'appareil de l'utilisateur ne supporte pas le Bluetooth LE, qui est requis pour communiquer avec les balises iBeacons.
 ```javascript
 document.addEventListener('ibeaconNotSupported', function() {
-/* Do something */
+/* Effectuer une action */
 }, false);
 ```
 
 ##### ibeaconDisabled
-This event is fired when the user disable ibeacons features with the modal provided by the script. This modal appears when the user refuse to enable Bluetooth or Location Services.
+Cet événement est déclenché lorsque l'utilisateur désactive les fonctionalitées liées aux iBeacons grâce à la popup prévue dans le script. Cette popup apparait lorsque l'utilisateur refuse d'activer le Bluetooth ou le Service de localisation.
 ```javascript
 document.addEventListener('ibeaconDisabled', function() {
-/* Do something */
+/* Effectuer une action */
 }, false);
 ```
 
-## LocalStorage values
-Some values are stored in the localStorage to prevent some actions to happend continually.
+## Les variables du localStorage
+Certaines valeurs sont stockées dans le localStorage pour éviter que certaines actions ne se produisent continuellement.
 
 ##### ibeaconBluetoothCompatibility
-Returns a string '0' when device is not compatible and '1' when it is.
+Retourne une chaîne de caractères '0' lorsque l'appareil n'est pas compatible et '1' lorsque c'est le cas.
 ```javascript
 localStorage.getItem('ibeaconBluetoothCompatibility');
 ```
 
 ##### ibeaconFeaturesDisabled
-Returns a string '1' when ibeacon features are disabled by the user, else returns NULL.
+Retourne une chaîne de caractères '1' lorsque les fonctionalitées liées aux iBeacons sont désactivées par l'utilisateur. Sinon, retourne NULL.
 ```javascript
 localStorage.getItem('ibeaconFeaturesDisabled');
 ```
 
 ##### bluetoothErrorMsg
-Returns a string '1' when the script displayed the "bluetooth LE not supported" message, else returns NULL.
+Retourne une chaîne de caractères '1' lorsque le script affiche la popup indiquant que l'appareil n'est pas compatible. Sinon, retourne NULL.
 ```javascript
 localStorage.getItem('bluetoothErrorMsg');
 ```
 
-## Lexicons
-All texts displayed by this script can be translated in the user language, based on the ```navigator.language``` parameter.
-For now, the script is available in english and french.
+## Lexiques
+Tous les textes affichés par ce script peuvent être traduits dans le langage de l'utilisateur, en fonction de son ```navigator.language```.
+Pour l'instant, le script est disponible en anglais et en français.
 
-You can add a translation by adding your language code and the corresponding texts at the top of the ```cordova-ready-ibeacon.js``` file :
+Vous pouvez ajouter une traduction en ajoutant le code de langue ainsi que les textes correspondant en haut du fichier ```cordova-ready-ibeacon.js``` :
 ```javascript
-en: {
-	deviceCheckingErrorTitle: 'Something went wrong',
-	deviceCheckingErrorMessage: 'Impossible to check if the device can connect to ibeacons. Please, activate Bluetooth and restart the application.',
-	deviceCheckingErrorButton: 'Close',
-        
-	deviceCheckingMessage: 'Device checking.',
-        
-	deviceNotSupportedErrorTitle: 'Your device is not supported',
-	deviceNotSupportedErrorMessage: 'Your device does not support Bluetooth 4.0, functionalities related to ibeacons are disabled.',
-	deviceNotSupportedErrorButton: 'Continue',
+fr: {
+	deviceCheckingErrorTitle: 'Un problème est survenu',
+	deviceCheckingErrorMessage: 'Impossible de vérifier si votre appareil est capable de se connecter aux objets connectés. Veuillez activer votre Bluetooth et relancer l\'application.',
+	deviceCheckingErrorButton: 'Quitter',
+
+	deviceCheckingMessage: 'Vérification de votre appareil.',
+
+	deviceNotSupportedErrorTitle: 'Votre appareil n\'est pas compatible',
+	deviceNotSupportedErrorMessage: 'Votre appareil n\'est pas compatible Bluetooth 4.0, les fonctionalités liées aux objets connectés sont désactivées.',
+	deviceNotSupportedErrorButton: 'Continuer',
 	
-	bluetoothNotEnabledAndroidErrorTitle: 'Enable Bluetooth ?',
-	bluetoothNotEnabledAndroidErrorMessage: 'You must enable Bluetooth to connect to ibeacons.',
-	bluetoothNotEnabledAndroidErrorButtons: 'Cancel,Enable',
+	bluetoothNotEnabledAndroidErrorTitle: 'Activer le Bluetooth ?',
+	bluetoothNotEnabledAndroidErrorMessage: 'Vous devez activer le Bluetooth pour communiquer avec les objets connectés.',
+	bluetoothNotEnabledAndroidErrorButtons: 'Annuler,Activer',
 	
-	bluetoothNotEnabledIosErrorTitle: 'Enable Bluetooth ?',
-	bluetoothNotEnabledIosErrorMessage: 'You must enable Bluetooth to connect to ibeacons.\n\n(Settings -> Bluetooth)',
-	bluetoothNotEnabledIosErrorButtons: 'Cancel,Enable',
+	bluetoothNotEnabledIosErrorTitle: 'Activer le Bluetooth ?',
+	bluetoothNotEnabledIosErrorMessage: 'Vous devez activer le Bluetooth pour communiquer avec les objets connectés.\n\n(Réglages -> Bluetooth)',
+	bluetoothNotEnabledIosErrorButtons: 'Annuler,Activer',
 	
-	waitingScreenBluetoothMessage: 'Please, enable Bluetooth',
+	waitingScreenBluetoothMessage: 'Veuillez activer le Bluetooth',
 	
-	locationNotEnabledIosErrorTitle: 'Enable Location Services ?',
-	locationNotEnabledIosErrorMessage: 'You must enable Location Services to connect to ibeacons.\n\n(Settings -> Privacy ->\nLocation Services)',
-	locationNotEnabledIosErrorButtons: 'Cancel,Ok',
+	locationNotEnabledIosErrorTitle: 'Activer le Service de localisation ?',
+	locationNotEnabledIosErrorMessage: 'Vous devez activer le Service de localisation pour communiquer avec les objets connectés.\n\n(Réglages -> Confidentialité ->\nService de localisation)',
+	locationNotEnabledIosErrorButtons: 'Annuler,Ok',
 	
-	waitingScreenLocationMessage: 'Please, enable Location Services',
+	waitingScreenLocationMessage: 'Veuillez activer la localisation',
 	
-	locationNotAuthorizedErrorTitle: 'You must authorize the application',
-	locationNotAuthorizedErrorMessage: 'You must authorize this application to use Location Services to connect to ibeacons.',
-	locationNotAuthorizedErrorButtons: 'Cancel,Authorize',
+	locationNotAuthorizedErrorTitle: 'Veuillez autoriser l\'application',
+	locationNotAuthorizedErrorMessage: 'Vous devez autoriser cette application à utiliser le Service de localisation pour communiquer avec les objets connectés.',
+	locationNotAuthorizedErrorButtons: 'Annuler,Autoriser',
 	
-	servicesActivationCancelledAndroidTitle: 'Disable ibeacons features ?',
-	servicesActivationCancelledAndroidMessage: 'If you do not enable Bluetooth, ibeacons features will be disabled.\n\nAre you sure ?',
-	servicesActivationCancelledAndroidButtons: 'Enable,Disable',
+	servicesActivationCancelledAndroidTitle: 'Désactiver les fonctionalités connectées ?',
+	servicesActivationCancelledAndroidMessage: 'Si vous n\'activez pas le Bluetooth, les fonctionalités liées aux objets connectés vont être désactivées.\n\nÊtes-vous sûr ?',
+	servicesActivationCancelledAndroidButtons: 'Activer,Désactiver',
 	
-	servicesActivationCancelledIosTitle: 'Disable ibeacons features ?',
-	servicesActivationCancelledIosMessage: 'If you do not enable Bluetooth and Location Services, ibeacons features will be disabled.\n\nAre you sure ?',
-	servicesActivationCancelledIosButtons: 'Enable,Disable'
+	servicesActivationCancelledIosTitle: 'Désactiver les fonctionalités connectées ?',
+	servicesActivationCancelledIosMessage: 'Si vous n\'activez pas le Bluetooth et le Service de localisation, les fonctionalités liées aux objets connectés vont être désactivées.\n\nÊtes-vous sûr ?',
+	servicesActivationCancelledIosButtons: 'Activer,Désactiver'
 }
 ```

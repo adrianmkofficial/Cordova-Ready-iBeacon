@@ -1,7 +1,7 @@
 [Read the documentation in english](https://github.com/RomainFallet/Cordova-Ready-iBeacon)
 
 # Cordova-Ready-iBeacon
-Cordova Ready iBeacon est un script JS qui fournit un solution complète « prête à être utilisée », basée sur différents plugins Cordova, pour dialoguer avec des balises iBeacons dans une application Cordova.
+Cordova Ready iBeacon est un script JS qui fournit une solution complète « prête à être utilisée », basée sur différents plugins Cordova, pour dialoguer avec des balises iBeacons dans une application Cordova.
 
 Cela passe par la vérification de l’appareil en cours d'utilisation (pour vérifier qu’il est bien compatible avec les balises iBeacons) ainsi que la vérification de l'activation du Bluetooth et du Service de localisation (ce dernier étant pour iOS uniquement).
 Le script informe l'utilisateur si son appareil n’est pas compatible et demande l’activation des services requis s'il sont désactivés.

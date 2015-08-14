@@ -291,6 +291,7 @@ var ibeacon = {
     		/*
              * Display a loading spinner while the device is checked
              */
+            window.plugins.spinnerDialog.hide();
             window.plugins.spinnerDialog.show(null, ibeacon._lexicons[ibeacon._lang].deviceCheckingMessage, true);
 	        
 			/*

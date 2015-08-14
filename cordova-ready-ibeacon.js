@@ -523,7 +523,12 @@ var ibeacon = {
 		        clearInterval(ibeacon._locationAuthInterval);
 		    	window.plugins.spinnerDialog.hide();
 		    	ibeacon._isWaiting = false;
-		    	ibeacon._locationAuthInterval = setInterval(ibeacon._locationAuthorization, 1000);	
+		    	ibeacon._locationAuthInterval = setInterval(ibeacon._locationAuthorization, 1000);
+		    	
+				/*
+		         * Dispatch initialized event
+		         */
+		    	document.dispatchEvent(ibeacon._ibeaconInitialized);	
 	    	}
 		}, function(e) { console.log('Error '+e); }  );                            
     },
@@ -579,12 +584,6 @@ var ibeacon = {
                     ibeacon._lexicons[ibeacon._lang].locationNotAuthorizedErrorTitle,
                     ibeacon._lexicons[ibeacon._lang].locationNotAuthorizedErrorButtons
                 );
-			}
-			else {
-				/*
-		         * Dispatch initialized event
-		         */
-		    	document.dispatchEvent(ibeacon._ibeaconInitialized);
 			}
         },function(e) { console.log('Error '+e); });
     },

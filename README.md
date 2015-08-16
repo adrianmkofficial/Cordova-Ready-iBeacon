@@ -91,6 +91,11 @@ You can stop scanning whenever you want using the stopScan() method. This method
 ```javascript
 ibeacon.stopScan();
 ````
+## Request Bluetooth and Location activation
+You can call ```activateServices()``` method to request Bluetooth and Location activation if disabled. This method is called within the ```initialize()``` method.
+```javascript
+ibeacon.activateServices();
+```
 
 ## Other events
 Some events are trigerred to let you manage all the situations :
@@ -178,3 +183,5 @@ en: {
 	servicesActivationCancelledIosButtons: 'Enable,Disable'
 }
 ```
+
+

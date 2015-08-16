@@ -93,6 +93,11 @@ Vous pouvez stopper le scan à tout moment en utilsant la méthode ```stopScan()
 ```javascript
 ibeacon.stopScan();
 ````
+## Demander l'activation du Bluetooth et de la localisation
+Vous pouvez appeler la méthode ```activateServices()``` pour demander à l'utilisateur d'activer le Bluetooth ou la localisation si ce n'est pas déjà le cas. Cette méthode est appelée automatiquement lors de l'initialisation.
+```javascript
+ibeacon.activateServices();
+```
 
 ## Autres événements
 Certains événements sont écoutés pour vous permettre de réagir face à toutes les situations.
@@ -180,3 +185,5 @@ fr: {
 	servicesActivationCancelledIosButtons: 'Activer,Désactiver'
 }
 ```
+
+

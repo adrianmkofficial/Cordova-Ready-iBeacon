@@ -56,7 +56,7 @@ var ibeacon = {
             
             bluetoothNotEnabledIosErrorTitle: 'Activer le Bluetooth ?',
             bluetoothNotEnabledIosErrorMessage: 'Vous devez activer le Bluetooth pour communiquer avec les objets connectés.\n\n(Réglages -> Bluetooth)',
-            bluetoothNotEnabledIosErrorButtons: 'Annuler,Activer',
+            bluetoothNotEnabledIosErrorButtons: 'Annuler,Ok',
             
             waitingScreenBluetoothMessage: 'Veuillez activer le Bluetooth',
             
@@ -97,7 +97,7 @@ var ibeacon = {
             
             bluetoothNotEnabledIosErrorTitle: 'Enable Bluetooth ?',
             bluetoothNotEnabledIosErrorMessage: 'You must enable Bluetooth to connect to ibeacons.\n\n(Settings -> Bluetooth)',
-            bluetoothNotEnabledIosErrorButtons: 'Cancel,Enable',
+            bluetoothNotEnabledIosErrorButtons: 'Cancel,Ok',
             
             waitingScreenBluetoothMessage: 'Please, enable Bluetooth',
             
@@ -267,7 +267,7 @@ var ibeacon = {
         /*
          * Start the bluetooth verification only if the device has not been already checked
          */
-        if (localStorage.getItem('ibeaconBluetoothCompatibility') !== null) {
+        if (localStorage.getItem('ibeaconBluetoothCompatibility') !== null || localStorage.getItem('ibeaconFeaturesDisabled') === '1') {
             ibeacon._verificationCompleteCallback();
             return;
         }
@@ -376,6 +376,12 @@ var ibeacon = {
             ); 
             localStorage.setItem('bluetoothErrorMsg', '1');
         }
+        else if (localStorage.getItem('ibeaconBluetoothCompatibility') === '0' && localStorage.getItem('bluetoothErrorMsg') !== null) {
+	        document.dispatchEvent(ibeacon._ibeaconNotSupported);
+        }
+        else if (localStorage.getItem('ibeaconFeaturesDisabled') === '1') {
+	        document.dispatchEvent(ibeacon._ibeaconDisabled);
+        }
         
         /*
          * Callback if the device is fully compatible Bluetooth 4.0
@@ -394,8 +400,14 @@ var ibeacon = {
 	 * @access public
 	 */
 	activateServices: function() {
-		if (localStorage.getItem('ibeaconBluetoothCompatibility') !== '0' && localStorage.getItem('ibeaconFunctionalitiesDisabled') !== '1') {
+		if (localStorage.getItem('ibeaconBluetoothCompatibility') !== '0' && localStorage.getItem('ibeaconFeaturesDisabled') !== '1') {
 			ibeacon._bluetoothActivation();	
+		}
+		else if (localStorage.getItem('ibeaconBluetoothCompatibility') === '1') {
+			document.dispatchEvent(ibeacon._ibeaconNotSupported);
+		}
+		else if (localStorage.getItem('ibeaconFeaturesDisabled') === '1') {
+			document.dispatchEvent(ibeacon._ibeaconDisabled);
 		}
 	},
     
@@ -647,13 +659,14 @@ var ibeacon = {
 	     * If the user click on "Deactivate"
 	     */
 		if (buttonIndex === 2) {
-			localStorage.setItem('ibeaconFunctionalitiesDisabled', '1');
+			localStorage.setItem('ibeaconFeaturesDisabled', '1');
 			document.dispatchEvent(ibeacon._ibeaconDisabled);
 		}
 	    /*
 	     * If the user click on "Activate"
 	     */
 		else if (buttonIndex === 1) {
+			localStorage.setItem('ibeaconFeaturesDisabled', '0');
 			ibeacon.activateServices();
 		}
     },

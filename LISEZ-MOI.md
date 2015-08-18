@@ -23,7 +23,7 @@ Cordova Ready iBeacon est basé sur plusieurs plugins qui sont nécessaires pour
     cordova plugin add https://github.com/petermetz/cordova-plugin-ibeacon
     cordova plugin add https://github.com/selahssea/Cordova-open-native-settings.git
     cordova plugin add https://github.com/Paldom/SpinnerDialog.git
-    cordova plugin add https://github.com/RomainFallet/cordova-plugin-dialogs
+    cordova plugin add https://github.com/numee/cordova-plugin-dialogs
     cordova plugin add cordova.plugins.diagnostic
     cordova plugin add cordova-plugin-device
     

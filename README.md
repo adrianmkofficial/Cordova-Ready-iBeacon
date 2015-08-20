@@ -1,6 +1,6 @@
-[Lire la documentation en français](https://github.com/RomainFallet/Cordova-Ready-iBeacon/blob/master/LISEZ-MOI.md)
-
-Small TEST.
+## Sample Project, adjusted for personal needs.
+For the original, actively maintained Project, please visit:
+(https://github.com/numee/Cordova-Ready-iBeacon)
 
 # Cordova-Ready-iBeacon
 Cordova Ready iBeacon is a script that give a complete solution "ready to use", based on several Cordova plugins, to connect to iBeacons in a Cordova application.

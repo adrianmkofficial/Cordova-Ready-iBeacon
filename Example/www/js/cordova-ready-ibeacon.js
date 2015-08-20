@@ -24,15 +24,15 @@
  * SOFTWARE.
  *
  */
- 
+
 var ibeacon = {
-	
+
 	/*
 	 * ======================================
 	 *              LEXICONS
 	 * ======================================
 	 */
-	 
+
     /**
      * All the text messages used by this script can be translated
      * with the lexicons.
@@ -43,96 +43,100 @@ var ibeacon = {
 			deviceCheckingErrorTitle: 'Un problème est survenu',
 			deviceCheckingErrorMessage: 'Impossible de vérifier si votre appareil est capable de se connecter aux objets connectés. Veuillez activer votre Bluetooth et relancer l\'application.',
 			deviceCheckingErrorButton: 'Quitter',
-            
+
 			deviceCheckingMessage: 'Vérification de votre appareil.',
-            
+
             deviceNotSupportedErrorTitle: 'Votre appareil n\'est pas compatible',
             deviceNotSupportedErrorMessage: 'Votre appareil n\'est pas compatible Bluetooth 4.0, les fonctionalités liées aux objets connectés sont désactivées.',
             deviceNotSupportedErrorButton: 'Continuer',
-            
+
             bluetoothNotEnabledAndroidErrorTitle: 'Activer le Bluetooth ?',
             bluetoothNotEnabledAndroidErrorMessage: 'Vous devez activer le Bluetooth pour communiquer avec les objets connectés.',
             bluetoothNotEnabledAndroidErrorButtons: 'Annuler,Activer',
-            
+
             bluetoothNotEnabledIosErrorTitle: 'Activer le Bluetooth ?',
             bluetoothNotEnabledIosErrorMessage: 'Vous devez activer le Bluetooth pour communiquer avec les objets connectés.\n\n(Réglages -> Bluetooth)',
             bluetoothNotEnabledIosErrorButtons: 'Annuler,Ok',
-            
+
             waitingScreenBluetoothMessage: 'Veuillez activer le Bluetooth',
-            
+
             locationNotEnabledIosErrorTitle: 'Activer le Service de localisation ?',
             locationNotEnabledIosErrorMessage: 'Vous devez activer le Service de localisation pour communiquer avec les objets connectés.\n\n(Réglages -> Confidentialité ->\nService de localisation)',
             locationNotEnabledIosErrorButtons: 'Annuler,Ok',
-            
+
             waitingScreenLocationMessage: 'Veuillez activer la localisation',
-            
+
             locationNotAuthorizedErrorTitle: 'Veuillez autoriser l\'application',
             locationNotAuthorizedErrorMessage: 'Vous devez autoriser cette application à utiliser le Service de localisation pour communiquer avec les objets connectés.',
             locationNotAuthorizedErrorButtons: 'Annuler,Autoriser',
-            
+
             servicesActivationCancelledAndroidTitle: 'Désactiver les fonctionalités connectées ?',
             servicesActivationCancelledAndroidMessage: 'Si vous n\'activez pas le Bluetooth, les fonctionalités liées aux objets connectés vont être désactivées.\n\nÊtes-vous sûr ?',
             servicesActivationCancelledAndroidButtons: 'Activer,Désactiver',
-            
+
             servicesActivationCancelledIosTitle: 'Désactiver les fonctionalités connectées ?',
             servicesActivationCancelledIosMessage: 'Si vous n\'activez pas le Bluetooth et le Service de localisation, les fonctionalités liées aux objets connectés vont être désactivées.\n\nÊtes-vous sûr ?',
             servicesActivationCancelledIosButtons: 'Activer,Désactiver'
-            
-            
+
+
 		},
 		en: {
 			deviceCheckingErrorTitle: 'Something went wrong',
-			deviceCheckingErrorMessage: 'Impossible to check if the device can connect to ibeacons. Please, activate Bluetooth and restart the application.',
+			deviceCheckingErrorMessage: 'Impossible to check if the device can connect to iBeacons. Please, activate Bluetooth and restart the application.',
 			deviceCheckingErrorButton: 'Close',
-            
+
 			deviceCheckingMessage: 'Device checking.',
-            
-            deviceNotSupportedErrorTitle: 'Your device is not supported',
-            deviceNotSupportedErrorMessage: 'Your device does not support Bluetooth 4.0, functionalities related to ibeacons are disabled.',
+
+            deviceNotSupportedErrorTitle: 'Your device is not supported.',
+            deviceNotSupportedErrorMessage: 'Your device does not support Bluetooth 4.0, functionalities related to iBeacons are disabled.',
             deviceNotSupportedErrorButton: 'Continue',
-            
-            bluetoothNotEnabledAndroidErrorTitle: 'Enable Bluetooth ?',
-            bluetoothNotEnabledAndroidErrorMessage: 'You must enable Bluetooth to connect to ibeacons.',
+
+            bluetoothNotEnabledAndroidErrorTitle: 'Enable Bluetooth',
+            bluetoothNotEnabledAndroidErrorMessage: 'You must enable Bluetooth to connect to iBeacons.',
             bluetoothNotEnabledAndroidErrorButtons: 'Cancel,Enable',
-            
-            bluetoothNotEnabledIosErrorTitle: 'Enable Bluetooth ?',
-            bluetoothNotEnabledIosErrorMessage: 'You must enable Bluetooth to connect to ibeacons.\n\n(Settings -> Bluetooth)',
-            bluetoothNotEnabledIosErrorButtons: 'Cancel,Ok',
-            
+
+            bluetoothNotEnabledIosErrorTitle: 'Enable Bluetooth',
+            bluetoothNotEnabledIosErrorMessage: 'You must enable Bluetooth to connect to iBeacons.\n\n(Settings -> Bluetooth)',
+            bluetoothNotEnabledIosErrorButtons: 'Cancel,OK',
+
             waitingScreenBluetoothMessage: 'Please, enable Bluetooth',
-            
+
             locationNotEnabledIosErrorTitle: 'Enable Location Services ?',
-            locationNotEnabledIosErrorMessage: 'You must enable Location Services to connect to ibeacons.\n\n(Settings -> Privacy ->\nLocation Services)',
-            locationNotEnabledIosErrorButtons: 'Cancel,Ok',
-            
+            locationNotEnabledIosErrorMessage: 'You must enable Location Services to connect to iBeacons.\n\n(Settings -> Privacy ->\nLocation Services)',
+            locationNotEnabledIosErrorButtons: 'Cancel,OK',
+
             waitingScreenLocationMessage: 'Please, enable Location Services',
-            
+
             locationNotAuthorizedErrorTitle: 'You must authorize the application',
-            locationNotAuthorizedErrorMessage: 'You must authorize this application to use Location Services to connect to ibeacons.',
+            locationNotAuthorizedErrorMessage: 'You must authorize this application to use Location Services to connect to iBeacons.',
             locationNotAuthorizedErrorButtons: 'Cancel,Authorize',
-            
-            servicesActivationCancelledAndroidTitle: 'Disable ibeacons features ?',
-            servicesActivationCancelledAndroidMessage: 'If you do not enable Bluetooth, ibeacons features will be disabled.\n\nAre you sure ?',
+
+            servicesActivationCancelledAndroidTitle: 'Disable iBeacons features ?',
+            servicesActivationCancelledAndroidMessage: 'If you do not enable Bluetooth, iBeacons features will be disabled.\n\nAre you sure ?',
             servicesActivationCancelledAndroidButtons: 'Enable,Disable',
-            
-            servicesActivationCancelledIosTitle: 'Disable ibeacons features ?',
-            servicesActivationCancelledIosMessage: 'If you do not enable Bluetooth and Location Services, ibeacons features will be disabled.\n\nAre you sure ?',
-            servicesActivationCancelledIosButtons: 'Enable,Disable'
+
+            servicesActivationCancelledIosTitle: 'Disable iBeacons features ?',
+            servicesActivationCancelledIosMessage: 'If you do not enable Bluetooth and Location Services, iBeacons features will be disabled.\n\nAre you sure ?',
+            servicesActivationCancelledIosButtons: 'Enable,Disable',
+
+            ProximityImmediate: 'I am right next to: ',
+            ProximityNear: 'I am near: ',
+            ProximityFar: 'I am far from: '
 		}
 	},
-	
-	
+
+
 	/*
 	 * ======================================
 	 *        PARAMETERS
 	 * ======================================
 	 */
-	 
+
     /**
      * The default language used in text messages
      * @var string ibeacon._lang
      */
-    _lang: 'fr',
+    _lang: 'en',
     /**
      * The identifiers of each beacon
      * @var array ibeacon._regions
@@ -188,14 +192,14 @@ var ibeacon = {
      * @var function ibeacon._scanInterval
      */
     _scanningInterval: undefined,
-    
-    
+
+
 	/*
 	 * ======================================
 	 *        METHODS
 	 * ======================================
 	 */
-	 
+
     /**
      * Initialize the ibeacon component
      *
@@ -207,32 +211,32 @@ var ibeacon = {
          * Use the language of the user device
          */
         ibeacon._lang = navigator.language.slice(0,2);
-	    
+
         /*
          * Store the regions datas and the user parameters
          */
         ibeacon._regions = params.regions;
         ibeacon._actions = params.actions;
-        
+
         /*
          * Bind events on DOM elements
          */
         ibeacon._bindEvents();
 
-        /* 
+        /*
          * Check if running device has bluetooth 4.0 or not
          */
         ibeacon._bluetoothCompatibilityVerification();
     },
-    
-    
+
+
     /**
      * Method for binding DOM event to html elements
      *
      * @access private
      */
     _bindEvents: function() {
-	    
+
         /*
          * An event that is fired when bluetooth 4.0 compatibility verification is completed
          */
@@ -247,7 +251,7 @@ var ibeacon = {
 	    	clearInterval(ibeacon._locationAuthInterval);
 	    	ibeacon.stopScan();
 	    }, false);
-	    
+
         /*
          * Resume event, it fires when an application is retrieved from the background.
          */
@@ -271,10 +275,10 @@ var ibeacon = {
             ibeacon._verificationCompleteCallback();
             return;
         }
-        
+
         /*
-         * The iOS verification consists to check if the running device matches one of the existing devices 
-         * whom we are sure they are not bluetooth 4.0 compatible (assuming that the current list is exhaustive 
+         * The iOS verification consists to check if the running device matches one of the existing devices
+         * whom we are sure they are not bluetooth 4.0 compatible (assuming that the current list is exhaustive
          * and that all future devices will be necessarily bluetooth 4.0 compatible)
          */
         if (device.platform.toLowerCase() === 'ios') {
@@ -282,7 +286,7 @@ var ibeacon = {
             else { localStorage.setItem('ibeaconBluetoothCompatibility', '1'); }
             document.dispatchEvent(ibeacon._verificationComplete);
         }
-        
+
         /*
          * The Android verification consists to enable bluetooth programmatically (if its disabled) and to check with the plugin method
          * if the running device has bluetooth 4.0 activated. If not, it means that bluetooth 4.0 is not supported.
@@ -293,7 +297,7 @@ var ibeacon = {
              */
             window.plugins.spinnerDialog.hide();
             window.plugins.spinnerDialog.show(null, ibeacon._lexicons[ibeacon._lang].deviceCheckingMessage, true);
-	        
+
 			/*
              * Callback function called when bluetooth is enabled during the test
              */
@@ -322,10 +326,10 @@ var ibeacon = {
 		                function() { },
 		                ibeacon._lexicons[ibeacon._lang].deviceCheckingErrorTitle,
 		                ibeacon._lexicons[ibeacon._lang].deviceCheckingErrorButton
-		            ); 
+		            );
                 }, {'request': false,'statusReceiver': false});
 			};
-			
+
             /*
              * Check is bluetooth is enabled
              */
@@ -335,7 +339,7 @@ var ibeacon = {
                      * If not, we enable bluetooth programmatically
                      */
                     cordova.plugins.locationManager.enableBluetooth();
-                    
+
                     setTimeout(function() {
 						bluetoothActivationCallback();
 						cordova.plugins.locationManager.disableBluetooth();
@@ -348,8 +352,8 @@ var ibeacon = {
             }).fail(console.error).done();
         }
     },
-    
-    
+
+
     /**
      * Callback called when verificationComplete event is fired
      *
@@ -361,7 +365,7 @@ var ibeacon = {
          */
         bluetoothle.stopScan(function() {}, function() {});
         window.plugins.spinnerDialog.hide();
-	    
+
         /*
          * Callback if the device is not compatible Bluetooth 4.0
          */
@@ -373,7 +377,7 @@ var ibeacon = {
                 },
                 ibeacon._lexicons[ibeacon._lang].deviceNotSupportedErrorTitle,
                 ibeacon._lexicons[ibeacon._lang].deviceNotSupportedErrorButton
-            ); 
+            );
             localStorage.setItem('bluetoothErrorMsg', '1');
         }
         else if (localStorage.getItem('ibeaconBluetoothCompatibility') === '0' && localStorage.getItem('bluetoothErrorMsg') !== null) {
@@ -382,7 +386,7 @@ var ibeacon = {
         else if (localStorage.getItem('ibeaconFeaturesDisabled') === '1') {
 	        document.dispatchEvent(ibeacon._ibeaconDisabled);
         }
-        
+
         /*
          * Callback if the device is fully compatible Bluetooth 4.0
          */
@@ -393,15 +397,15 @@ var ibeacon = {
             ibeacon.activateServices();
         }
     },
-    
+
     /**
 	 * Request activation of bluetooth and location service if disabled
-	 * 
+	 *
 	 * @access public
 	 */
 	activateServices: function() {
 		if (localStorage.getItem('ibeaconBluetoothCompatibility') !== '0' && localStorage.getItem('ibeaconFeaturesDisabled') !== '1') {
-			ibeacon._bluetoothActivation();	
+			ibeacon._bluetoothActivation();
 		}
 		else if (localStorage.getItem('ibeaconBluetoothCompatibility') === '1') {
 			document.dispatchEvent(ibeacon._ibeaconNotSupported);
@@ -410,10 +414,10 @@ var ibeacon = {
 			document.dispatchEvent(ibeacon._ibeaconDisabled);
 		}
 	},
-    
+
     /**
 	 * Request activation of bluetooth if disabled
-	 * 
+	 *
 	 * @access private
 	 */
 	_bluetoothActivation: function() {
@@ -447,7 +451,7 @@ var ibeacon = {
 					clearInterval(ibeacon._bluetoothInterval);
 			    	window.plugins.spinnerDialog.hide();
 			    	ibeacon._isWaiting = false;
-			    	
+
 					/*
 				     * Check location service
 				     */
@@ -462,11 +466,11 @@ var ibeacon = {
 	    	}
 	    }).fail(console.error).done();
 	},
-	
-	
+
+
     /**
 	 * Method called after the close of bluetooth activation modal
-	 * 
+	 *
 	 * @access private
 	 */
 	_onBluetoothConfirm: function(buttonIndex) {
@@ -474,12 +478,12 @@ var ibeacon = {
 	     * If the user clicks on "Activate"
 	     */
 		if (buttonIndex === 2) {
-			if (device.platform.toLowerCase() === 'android') { 
+			if (device.platform.toLowerCase() === 'android') {
 			    /*
 			     * Activate bluetooth programatically and check the location service
 			     */
 				cordova.plugins.locationManager.enableBluetooth();
-				
+
 				/*
 		         * Dispatch initialized event
 		         */
@@ -494,17 +498,17 @@ var ibeacon = {
 				ibeacon._bluetoothInterval = setInterval(ibeacon._bluetoothActivation, 1000);
 			}
 		}
-		
+
 	    /*
 	     * If the user click on "Cancel"
 	     */
 		else if (buttonIndex === 1) { ibeacon._onServicesActivationCancel(); }
 	},
-	
-	
+
+
     /**
 	 * Request activation of location services if disabled
-	 * 
+	 *
 	 * @access private
 	 */
     _locationActivation: function() {
@@ -514,7 +518,7 @@ var ibeacon = {
 	         */
 	        if (isLocationEnabled === 0) { isLocationEnabled = false; }
 	        else { isLocationEnabled = true; }
-	
+
 			/*
 	         * Check location status
 	         */
@@ -537,19 +541,19 @@ var ibeacon = {
 		    	window.plugins.spinnerDialog.hide();
 		    	ibeacon._isWaiting = false;
 		    	ibeacon._locationAuthInterval = setInterval(ibeacon._locationAuthorization, 1000);
-		    	
+
 				/*
 		         * Dispatch initialized event
 		         */
-		    	document.dispatchEvent(ibeacon._ibeaconInitialized);	
+		    	document.dispatchEvent(ibeacon._ibeaconInitialized);
 	    	}
-		}, function(e) { console.log('Error '+e); }  );                            
+		}, function(e) { console.log('Error '+e); }  );
     },
-    
-    
+
+
     /**
 	 * Method called after the close of location activation modal
-	 * 
+	 *
 	 * @access private
 	 */
     _onLocationConfirm: function(buttonIndex) {
@@ -569,11 +573,11 @@ var ibeacon = {
 	     */
 		else if (buttonIndex === 1) { ibeacon._onServicesActivationCancel(); }
     },
-    
-    
+
+
     /**
 	 * Request location authorization (iOS only)
-	 * 
+	 *
 	 * @access private
 	 */
     _locationAuthorization: function() {
@@ -583,12 +587,12 @@ var ibeacon = {
 	         */
 	        if (isLocationAuthorized === 0) { isLocationAuthorized = false; }
 	        else { isLocationAuthorized = true; }
-	        
+
             /*
              * Request location permission from user
              */
             cordova.plugins.locationManager.requestWhenInUseAuthorization();
-            
+
 			if (!isLocationAuthorized) {
 				clearInterval(ibeacon._locationAuthInterval);
                 navigator.notification.confirm(
@@ -600,15 +604,15 @@ var ibeacon = {
 			}
         },function(e) { console.log('Error '+e); });
     },
-    
-    
+
+
     /**
 	 * Method called after the close of location authorization modal
-	 * 
+	 *
 	 * @access private
 	 */
     _onLocationAuthConfirm: function(buttonIndex) {
-	    
+
 	    /*
 	     * If the user click on "Authorize"
 	     */
@@ -616,17 +620,17 @@ var ibeacon = {
 			ibeacon._isWaiting = true;
 			cordova.plugins.settings.open(function(){},function(){});
 		}
-		
+
 	    /*
 	     * If the user click on "Cancel"
 	     */
 		else if (buttonIndex === 1) { ibeacon._onServicesActivationCancel(); }
     },
-    
-    
+
+
     /**
 	 * Method called after the close of an service activation modal
-	 * 
+	 *
 	 * @access private
 	 */
     _onServicesActivationCancel: function() {
@@ -635,7 +639,7 @@ var ibeacon = {
 			    ibeacon._lexicons[ibeacon._lang].servicesActivationCancelledAndroidMessage,
 			    ibeacon._onServicesActivationCancelConfirm,
 			    ibeacon._lexicons[ibeacon._lang].servicesActivationCancelledAndroidTitle,
-			    ibeacon._lexicons[ibeacon._lang].servicesActivationCancelledAndroidButtons    
+			    ibeacon._lexicons[ibeacon._lang].servicesActivationCancelledAndroidButtons
 			);
 	    }
 	    else if (device.platform.toLowerCase() === 'ios') {
@@ -643,15 +647,15 @@ var ibeacon = {
 			    ibeacon._lexicons[ibeacon._lang].servicesActivationCancelledIosMessage,
 			    ibeacon._onServicesActivationCancelConfirm,
 			    ibeacon._lexicons[ibeacon._lang].servicesActivationCancelledIosTitle,
-			    ibeacon._lexicons[ibeacon._lang].servicesActivationCancelledIosButtons    
+			    ibeacon._lexicons[ibeacon._lang].servicesActivationCancelledIosButtons
 			);
 	    }
     },
-    
-    
+
+
     /**
 	 * Method called when the user make a choice on the onServicesActivationCancel modal
-	 * 
+	 *
 	 * @access private
 	 */
     _onServicesActivationCancelConfirm: function(buttonIndex) {
@@ -670,7 +674,7 @@ var ibeacon = {
 			ibeacon.activateServices();
 		}
     },
-    
+
     /**
      * Start searching for beacons
      *
@@ -696,7 +700,7 @@ var ibeacon = {
     	}
     },
 
-    
+
     /**
      * Scanning callback
      *
@@ -717,14 +721,14 @@ var ibeacon = {
          */
     	var beacon = pluginResult.beacons[0],
             identifier = pluginResult.region.identifier;
-    
+
         /*
          * Call user actions callback
          */
         ibeacon._actions(beacon, identifier);
     },
-    
-    
+
+
     /**
      * Stop searching for beacons
      *

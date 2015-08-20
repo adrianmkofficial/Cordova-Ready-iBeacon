@@ -1,0 +1,135 @@
+@font-face {
+	font-family: 'iBeaconAppFont';
+
+	src:url('fonts/iBeaconAppFont.eot?#iefix-nnnig7') format('embedded-opentype'),
+		url('fonts/iBeaconAppFont.woff?-nnnig7') format('woff'),
+		url('fonts/iBeaconAppFont.svg?-nnnig7#iBeaconAppFont') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'iBeaconAppFont';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+body{
+	background: #fafafa;
+}
+.icon-iBeacon:before {
+	content: "\e601";
+	font-size:8em;
+	color: #4F6586;
+}
+.icon-Bluetooth:before {
+	content: "\e600";
+}
+.icon-Location:before {
+	content: "\e602";
+}
+
+
+figcaption {
+  color: #4F6586;
+  font-family: helvetica;
+	font-size: 0.8em;
+	margin-top: 1em;
+	font-weight: 500;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+}
+
+figure {
+  text-align: center;
+margin-top: 15em;
+}
+
+figure div {
+  display: inline-block;
+  box-shadow: 0 0 0 0em #9fc6ff, 0 0 0 0em #4F6586;
+  border-radius: 100%;
+  width: 8em;
+  height: 8em;
+}
+
+.inner {
+	background-color: #FAFAFA;
+  overflow: hidden;
+  -webkit-animation: circle2 4s infinite ease-out;
+  -moz-animation: circle2 4s infinite ease-out;
+  animation: circle2 4s infinite ease-out;
+}
+
+.outer {
+  -webkit-animation: circle1 4s infinite ease-out;
+  -moz-animation: circle1 4s infinite ease-out;
+  animation: circle1 4s infinite ease-out;
+}
+
+img {
+  width: 100%;
+}
+
+@-webkit-keyframes circle1 {
+  70% {
+    box-shadow: 0 0 0 160px #fafafa, 0 0 0 163px #fafafa;
+  }
+  100% {
+    box-shadow: 0 0 0 160px #fafafa, 0 0 0 163px #fafafa;
+  }
+}
+@-moz-keyframes circle1 {
+  70% {
+    box-shadow: 0 0 0 160px #fafafa, 0 0 0 163px #fafafa;
+  }
+  100% {
+    box-shadow: 0 0 0 160px #fafafa, 0 0 0 163px #fafafa;
+  }
+}
+@keyframes circle1 {
+  70% {
+    box-shadow: 0 0 0 160px #fafafa, 0 0 0 163px #fafafa;
+  }
+  100% {
+    box-shadow: 0 0 0 160px #fafafa, 0 0 0 163px #fafafa;
+  }
+}
+@-webkit-keyframes circle2 {
+  15% {
+box-shadow: 0 0 0 0em #9fc6ff, 0 0 0 0em #4F6586;  }
+  85% {
+    box-shadow: 0 0 0 160px #fafafa, 0 0 0 163px #fafafa;
+  }
+  100% {
+    box-shadow: 0 0 0 160px #fafafa, 0 0 0 163px #fafafa;
+  }
+}
+@-moz-keyframes circle2 {
+  15% {
+box-shadow: 0 0 0 0em #9fc6ff, 0 0 0 0em #4F6586;  }
+  85% {
+    box-shadow: 0 0 0 160px #fafafa, 0 0 0 163px #fafafa;
+  }
+  100% {
+    box-shadow: 0 0 0 160px #fafafa, 0 0 0 163px #fafafa;
+  }
+}
+@keyframes circle2 {
+  15% {
+    box-shadow: 0 0 0 0em #9fc6ff, 0 0 0 0em #4F6586;
+  }
+  85% {
+    box-shadow: 0 0 0 160px #fafafa, 0 0 0 163px #fafafa;
+  }
+  100% {
+    box-shadow: 0 0 0 160px #fafafa, 0 0 0 163px #fafafa;
+  }
+}

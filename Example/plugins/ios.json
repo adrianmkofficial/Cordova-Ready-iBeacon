@@ -87,28 +87,28 @@
     },
     "installed_plugins": {
         "com.phonegap.plugins.nativesettingsopener": {
-            "PACKAGE_NAME": "io.cordova.hellocordova"
+            "PACKAGE_NAME": "io.cordova.beacontest"
         },
         "com.randdusing.bluetoothle": {
-            "PACKAGE_NAME": "io.cordova.hellocordova"
+            "PACKAGE_NAME": "io.cordova.beacontest"
         },
         "com.unarin.cordova.beacon": {
-            "PACKAGE_NAME": "io.cordova.hellocordova"
+            "PACKAGE_NAME": "io.cordova.beacontest"
         },
         "cordova-plugin-device": {
-            "PACKAGE_NAME": "io.cordova.hellocordova"
+            "PACKAGE_NAME": "io.cordova.beacontest"
         },
         "cordova-plugin-dialogs": {
-            "PACKAGE_NAME": "io.cordova.hellocordova"
+            "PACKAGE_NAME": "io.cordova.beacontest"
         },
         "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "io.cordova.hellocordova"
+            "PACKAGE_NAME": "io.cordova.beacontest"
         },
         "cordova.plugins.diagnostic": {
-            "PACKAGE_NAME": "io.cordova.hellocordova"
+            "PACKAGE_NAME": "io.cordova.beacontest"
         },
         "hu.dpal.phonegap.plugins.SpinnerDialog": {
-            "PACKAGE_NAME": "io.cordova.hellocordova"
+            "PACKAGE_NAME": "io.cordova.beacontest"
         }
     },
     "dependent_plugins": {}

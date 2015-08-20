@@ -1,0 +1,41 @@
+{
+  "name": "iBeaconScanner",
+  "version": "1.0.0",
+  "description": "A Simple iBeacon Scanner Application based on popular Cordova Plugins",
+  "dependencies": {
+    "cordova-icon": "^0.3.0"
+  },
+  "devDependencies": {},
+  "cordovaPlugins": [
+    {
+      "locator": "https://github.com/randdusing/BluetoothLE",
+      "id": "com.randdusing.bluetoothle"
+    },
+    {
+      "locator": "https://github.com/petermetz/cordova-plugin-ibeacon",
+      "id": "com.unarin.cordova.beacon"
+    },
+    {
+      "locator": "https://github.com/selahssea/Cordova-open-native-settings.git",
+      "id": "com.phonegap.plugins.nativesettingsopener"
+    },
+    {
+      "locator": "https://github.com/Paldom/SpinnerDialog.git",
+      "id": "hu.dpal.phonegap.plugins.SpinnerDialog"
+    },
+    {
+      "locator": "https://github.com/RomainFallet/cordova-plugin-dialogs",
+      "id": "cordova-plugin-dialogs"
+    },
+    "cordova.plugins.diagnostic",
+    "cordova-plugin-device",
+    "cordova-plugin-whitelist"
+  ],
+  "cordovaPlatforms": [
+    {
+      "platform": "ios",
+      "version": "",
+      "locator": "ios"
+    }
+  ]
+}
